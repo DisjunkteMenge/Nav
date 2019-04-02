@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Route} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -11,7 +11,7 @@ export class DetailsPage implements OnInit {
 
  id = null;
 
-    // ActivatedRoute für übergeben der id
+    // ActivatedRoute für übergeben der id.
   constructor(private route: ActivatedRoute) { }
 
   // ngOnInit = Was sehe ich beim gehen auf die Seite.
