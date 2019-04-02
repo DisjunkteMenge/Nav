@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
-  { path: 'details/:myid', loadChildren: './pages/details/details.module#DetailsPageModule' },
+    // an die Seite "details" wird id weitegeben
+  { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule' },
 ];
 
 @NgModule({

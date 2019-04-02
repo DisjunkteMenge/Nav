@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Route} from '@angular/router';
+
 
 @Component({
   selector: 'app-details',
@@ -8,13 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  myId = null;
+ id = null;
 
+    // ActivatedRoute für übergeben der id
+  constructor(private route: ActivatedRoute) { }
 
-  constructor(private activatedRoute: ActivatedRoute) { }
-
+  // ngOnInit = Was sehe ich beim gehen auf die Seite.
   ngOnInit() {
-    this.myId = this.activatedRoute.snapshot.paramMap.get('myid');
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }
