@@ -10,24 +10,23 @@ export class LoginPage implements OnInit {
 
   constructor(private storage: Storage) { }
 
-  ruecken:string;
-  key:string = 'auswahl';
+    item:String[] = [];
+    key:string = 'auswahl';
 
 
   saveData(){
-      this.storage.set(this.key, this.ruecken);
+      this.storage.set(this.key, this.item);
+
   }
 
  loadData(){
       this.storage.get(this.key).then((val)=>{
-          console.log('auswahl:', val)
+        return this.item;
      })
  }
 
 
-
-
   ngOnInit() {
-  }
+      }
 
 }
