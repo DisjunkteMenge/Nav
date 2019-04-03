@@ -9,4 +9,14 @@
   Login
 </ion-button>
 
+  <ion-item>
+  <ion-select [(ngModel)]="ruecken">
+    <ion-select-option>Rueckenstrecker</ion-select-option>
+    <ion-select-option>Rudern</ion-select-option>
+  </ion-select>
+  </ion-item>
+
+  <ion-button (click)="saveData()">Save Data</ion-button>
+  <ion-button (click)="loadData()">Load Data</ion-button>
+
 </ion-content>
