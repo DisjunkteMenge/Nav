@@ -7,7 +7,7 @@
 <ion-content>
 
 
-  <ion-item>
+  <ion-item>Wähle deine Abos!
   <ion-select [(ngModel)]="item">
     <ion-select-option>Rueckenstrecker</ion-select-option>
     <ion-select-option>Rudern</ion-select-option>
@@ -15,9 +15,16 @@
   </ion-select>
   </ion-item>
 
+
+
   <ion-button (click)="saveData()">Save Data</ion-button>
   <ion-button (click)="loadData()" routerLink="/dashboard" routerDirection="forward">Load Data</ion-button>
 
-
+  <ion-list>
+    <ion-item *ngFor="let entry of form">
+      <ion-label>{{entry.item}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

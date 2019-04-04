@@ -1,5 +1,7 @@
 {
   "name": "Nav",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

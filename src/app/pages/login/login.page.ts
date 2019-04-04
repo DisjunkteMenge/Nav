@@ -8,10 +8,18 @@ import {Storage} from '@ionic/storage';
 })
 export class LoginPage implements OnInit {
 
+
   constructor(private storage: Storage) { }
 
-    item:String[] = [];
+    item:String;
     key:string = 'auswahl';
+
+    public form = [
+        { item: 'Amazon', isChecked: false },
+        { item: 'Netflix', isChecked: false },
+        { item: 'Sky', isChecked: false }
+    ];
+
 
 
   saveData(){
