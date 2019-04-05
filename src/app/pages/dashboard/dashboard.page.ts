@@ -9,8 +9,10 @@ import {Storage} from '@ionic/storage';
 })
 export class DashboardPage implements OnInit {
 
-    constructor(private router: Router, private storage: Storage) {
-    }
+    constructor(
+        private router: Router, 
+        private storage: Storage
+    ) {}
 
     key:string = 'auswahl';
     item = '';

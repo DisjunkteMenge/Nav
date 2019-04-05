@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import {Storage} from '@ionic/storage';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 
 
@@ -10,27 +11,37 @@ import {Storage} from '@ionic/storage';
 })
 export class LoginPage implements OnInit {
 
+  noteArr: any[] = [];
+  key:string = 'auswahl';
+  selection: FormGroup;
+
+
+  constructor(
+    private storage: Storage,
+    private fb: FormBuilder
+  ) { }
 
 
 
-  constructor(private storage: Storage) { }
 
-
-    item:any;
-    key:string = 'auswahl';
-
-
-  saveData(){
-      this.storage.set(this.key, this.item);
+  saveData(d){
+    this.storage.get('auswahl').then((val) => {
+        this.noteArr.push(d.selectionInput);
+        this.storage.set(this.key, this.noteArr);
+    })
+      
   }
 
  loadData(){
       this.storage.get('auswahl').then((val)=>{
-
+        
      })
  }
 
   ngOnInit() {
-      }
+    this.selection = this.fb.group({
+      selectionInput: [""],
+    })
+  }
 
 }
